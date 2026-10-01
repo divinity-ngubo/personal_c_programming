@@ -10,8 +10,8 @@ Chumani Ngubo
 
 void palindrome(char* ptr){
 
-    int length = strlen(ptr) - 1;
-    char str[length];
+    int length = strlen(ptr);
+    char str[length + 1];
 
     /*if (str = NULL){
         print("Error in allocating memory for string.");
@@ -19,8 +19,10 @@ void palindrome(char* ptr){
     }*/
     
     for (int i = 0; i < length; ++i){
+        str[i] = ptr[length - 1 -i];
+   }
 
-    }
+   str[length] = '\0';
     
     if(strcmp(str, ptr) == 0){
         printf("This word %s is a palindrome",ptr);
@@ -41,7 +43,7 @@ int main(void){
     }
 
     printf("Please type in the word you think is a palindrome: \n");
-    scanf(" %s",&str);
+    scanf("%s",str);
     palindrome(str);
 
     free(str);
