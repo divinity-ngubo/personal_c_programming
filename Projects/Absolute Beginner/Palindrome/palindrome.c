@@ -16,11 +16,6 @@ void palindrome(char* ptr){
     char temp[length + 1];
     strcpy(temp, ptr);
 
-    /*if (str = NULL){
-        print("Error in allocating memory for string.");
-        exit(1);
-    }*/
-    
     for (int i = 0; i < length; ++i){
         str[i] = ptr[length - 1 -i];
         str[i] = toupper(str[i]);
@@ -32,11 +27,10 @@ void palindrome(char* ptr){
     if(strcmp(str, ptr) == 0){
         printf("This word %s is a palindrome",temp);
     }
+    
     else{
         printf("The word %s is not a palindrome", temp);
-    }
-
-    
+    }    
 }
 
 int main(void){
