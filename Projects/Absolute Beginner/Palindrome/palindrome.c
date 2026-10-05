@@ -35,14 +35,15 @@ void palindrome(char* ptr){
 
 int main(void){
 
-    char* str = malloc(100);
+    char* str = malloc(sizeof(char)*100);
 
     if (str == NULL){
         return 1;
     }
 
     printf("Please type in the word you think is a palindrome: \n");
-    scanf("%s",str);
+    
+    scanf("%99s",str);
     palindrome(str);
 
     free(str);
