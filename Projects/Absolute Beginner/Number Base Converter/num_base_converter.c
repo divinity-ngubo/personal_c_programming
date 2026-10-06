@@ -11,10 +11,9 @@ v0 - 04 Oct 2026 @22h24
 
 void to_binary(double num){
 
-    char str[2] = "";
-    double num_mag = abs(num);
-    int rem, whole = (int)num_mag, real;
-    float dec = num_mag - whole;
+      char str[2] = "";
+    int rem, whole = (int)num, real;
+    float dec = num - whole;
     char bits[32] = "";
 
     do{
@@ -24,13 +23,6 @@ void to_binary(double num){
         strcat(bits, str);
 
     }while(whole != 0);
-
-    if (num<0){
-        strcat(bits,"1");
-        }
-    else{
-        strcat(bits,"0");
-        }
 
     int len = (strlen(bits));
 
@@ -51,15 +43,19 @@ void to_binary(double num){
         }while(dec != 0);
     }
 
-
-    printf("\nFunc called\n");
     printf("%s\n", bits);
     
 }
 
 int main(void){
 
-    printf("ON");
-    to_binary(-2);
+    double num;
+
+    do{
+        printf("Enter a positive number: \n");
+        scanf("%lf",&num);
+    }while(num<0);
+
+    to_binary(num);
     return 0;
 }
